@@ -147,3 +147,5 @@ for(let item of arr1){
 }
 
 console.log(intersection);
+
+
