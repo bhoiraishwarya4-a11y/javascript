@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f4f7fb;
+  font-family: Arial, sans-serif;
+  color: #212529;
+}
+
+
+/* Navbar */
+
+.custom-navbar {
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  padding: 15px 0;
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+
+/* Main Heading */
+
+.icon-circle {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+  color: white;
+
+  font-size: 28px;
+
+  box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+}
+
+
+h1 {
+  color: #1e293b;
+}
+
+
+/* Add Task Card */
+
+.add-task-card {
+  border-radius: 20px;
+}
+
+.section-icon {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+
+/* Inputs */
+
+.custom-input {
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid #dbe1ea;
+  padding: 10px 15px;
+}
+
+.custom-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
+}
+
+
+/* Add Button */
+
+.add-btn {
+  height: 48px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #4f46e5, #7c3aed);
+
+  color: white;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  color: white;
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.25);
+}
+
+
+/* Task Card */
+
+.task-card {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.task-label {
+  background: #eef2ff;
+  color: #4f46e5;
+
+  padding: 8px 14px;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* Table */
+
+.table thead {
+  background: #f8fafc;
+}
+
+.table thead th {
+  color: #64748b;
+  font-size: 13px;
+
+  padding: 16px;
+  border: none;
+}
+
+.table tbody td {
+  padding: 18px 16px;
+  border-color: #eef1f5;
+}
+
+.table tbody tr {
+  transition: 0.25s;
+}
+
+.table tbody tr:hover {
+  background: #fafbff;
+}
+
+
+/* Status */
+
+.status-badge {
+  display: inline-block;
+
+  padding: 7px 13px;
+
+  border-radius: 20px;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.status-completed {
+  background: #ecfdf5;
+  color: #059669;
+}
+
+
+/* Action Buttons */
+
+.action-btn {
+  width: 38px;
+  height: 38px;
+
+  border: none;
+  border-radius: 9px;
+
+  transition: 0.25s;
+}
+
+.edit-btn {
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.delete-btn {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+}
+
+
+/* Footer */
+
+.footer {
+  background: #111827;
+  color: white;
+}
+
+.footer small {
+  color: #9ca3af;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .custom-navbar .container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .task-label {
+    display: none;
+  }
+
+  .table {
+    min-width: 700px;
+  }
+
+}
