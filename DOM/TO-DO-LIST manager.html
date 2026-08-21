@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>To-Do List</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        min-height: 100vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        font-family: Arial, sans-serif;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        padding: 20px;
+      }
+
+      /* MAIN CARD */
+
+      .todo-container {
+        width: 500px;
+
+        padding: 35px;
+
+        background: white;
+
+        border-radius: 20px;
+
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      }
+
+      /* HEADING */
+
+      h1 {
+        text-align: center;
+
+        color: #333;
+
+        margin-bottom: 25px;
+
+        font-size: 2.2rem;
+      }
+
+      /* INPUT AREA */
+
+      .input-container {
+        display: flex;
+
+        gap: 10px;
+
+        margin-bottom: 25px;
+      }
+
+      .todo-input {
+        flex: 1;
+
+        padding: 13px 15px;
+
+        font-size: 1rem;
+
+        border: 2px solid #ddd;
+
+        border-radius: 10px;
+
+        outline: none;
+
+        transition: 0.3s;
+      }
+
+      .todo-input:focus {
+        border-color: #667eea;
+
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.15);
+      }
+
+      /* ADD BUTTON */
+
+      .add-button {
+        padding: 13px 20px;
+
+        border: none;
+
+        border-radius: 10px;
+
+        background: linear-gradient(135deg, #667eea, #764ba2);
+
+        color: white;
+
+        font-size: 1rem;
+
+        font-weight: bold;
+
+        cursor: pointer;
+
+        transition: 0.3s;
+      }
+
+      .add-button:hover {
+        transform: translateY(-2px);
+
+        box-shadow: 0 8px 20px rgba(102, 126, 234, 0.35);
+      }
+
+      .add-button:active {
+        transform: scale(0.96);
+      }
+
+      /* TODO LIST */
+
+      ul {
+        list-style: none;
+
+        padding: 0;
+      }
+
+      /* TODO ITEM */
+
+      li {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 14px 16px;
+
+        margin: 10px 0;
+
+        background: #f8f9ff;
+
+        border-left: 5px solid #667eea;
+
+        border-radius: 10px;
+
+        color: #333;
+
+        font-size: 1rem;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+
+        animation: slideIn 0.3s ease;
+      }
+
+      /* DELETE BUTTON */
+
+      .delete-button {
+        border: none;
+
+        padding: 8px 14px;
+
+        background: #ef4444;
+
+        color: white;
+
+        border-radius: 7px;
+
+        cursor: pointer;
+
+        font-size: 0.9rem;
+
+        transition: 0.3s;
+      }
+
+      .delete-button:hover {
+        background: #dc2626;
+
+        transform: scale(1.05);
+      }
+
+      /* ANIMATION */
+
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-15px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      /* MOBILE */
+
+      @media (max-width: 600px) {
+        .todo-container {
+          width: 100%;
+
+          padding: 25px 20px;
+        }
+
+        .input-container {
+          flex-direction: column;
+        }
+
+        .add-button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- MAIN TODO CONTAINER -->
+
+    <div class="todo-container">
+      <h1>To-Do List</h1>
+
+      <!-- INPUT AREA -->
+
+      <div class="input-container">
+        <input
+          type="text"
+          id="todo-input"
+          class="todo-input"
+          placeholder="Add a new task..."
+        />
+
+        <button id="add-button" class="add-button">Add Task</button>
+      </div>
+
+      <!-- TODO LIST -->
+
+      <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+      // Get HTML Elements
+
+      const totoInput = document.getElementById("todo-input");
+
+      const addButton = document.getElementById("add-button");
+
+      const todoList = document.getElementById("todo-list");
+
+      // Add Task
+
+      addButton.addEventListener("click", () => {
+        // Get input value
+
+        const task = totoInput.value.trim();
+
+        // Check input is not empty
+
+        if (task !== "") {
+          // Create new list item
+
+          const listItem = document.createElement("li");
+
+          // Add task and delete button
+
+          listItem.innerHTML = `
+                    <span>${task}</span>
+
+                    <button class="delete-button">
+                        Delete
+                    </button>
+                `;
+
+          // Add list item to UL
+
+          todoList.appendChild(listItem);
+
+          // Select delete button
+
+          const deleteButton = listItem.querySelector(".delete-button");
+
+          // Delete task
+
+          deleteButton.addEventListener("click", () => {
+            todoList.removeChild(listItem);
+          });
+
+          // Clear input
+
+          totoInput.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
