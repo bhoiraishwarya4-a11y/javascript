@@ -1,6 +1,6 @@
-// ===============================
+
 // DOM ELEMENTS
-// ===============================
+
 
 const passwordOutput = document.getElementById("passwordOutput");
 
@@ -25,9 +25,9 @@ const errorMessage = document.getElementById("errorMessage");
 const copyMessage = document.getElementById("copyMessage");
 
 
-// ===============================
+
 // CHARACTER SETS
-// ===============================
+
 
 const CHARACTERS = {
 
@@ -41,16 +41,16 @@ const CHARACTERS = {
 };
 
 
-// ===============================
+
 // AMBIGUOUS CHARACTERS
-// ===============================
+
 
 const AMBIGUOUS_CHARACTERS = "iIlL1oO0";
 
 
-// ===============================
+
 // LENGTH DISPLAY
-// ===============================
+
 
 passwordLength.addEventListener("input", () => {
 
@@ -59,9 +59,9 @@ passwordLength.addEventListener("input", () => {
 });
 
 
-// ===============================
+
 // SECURE RANDOM INDEX
-// ===============================
+
 
 function secureRandomIndex(max) {
 
@@ -92,9 +92,9 @@ function secureRandomIndex(max) {
 }
 
 
-// ===============================
+
 // SECURE RANDOM CHARACTER
-// ===============================
+
 
 function secureRandomCharacter(characters) {
 
@@ -104,9 +104,9 @@ function secureRandomCharacter(characters) {
 }
 
 
-// ===============================
+
 // REMOVE AMBIGUOUS CHARACTERS
-// ===============================
+
 
 function removeAmbiguousCharacters(characters) {
 
@@ -118,9 +118,9 @@ function removeAmbiguousCharacters(characters) {
 }
 
 
-// ===============================
+
 // GET SELECTED CHARACTER SETS
-// ===============================
+
 
 function getCharacterSets() {
 
@@ -155,9 +155,9 @@ function getCharacterSets() {
 }
 
 
-// ===============================
+
 // SECURE SHUFFLE
-// ===============================
+
 
 function secureShuffle(array) {
 
@@ -174,9 +174,9 @@ function secureShuffle(array) {
 }
 
 
-// ===============================
+
 // GENERATE PASSWORD
-// ===============================
+
 
 function generatePassword() {
 
@@ -187,9 +187,8 @@ function generatePassword() {
     const characterSets = getCharacterSets();
 
 
-    // -------------------------------
     // VALIDATION
-    // -------------------------------
+
 
     if (characterSets.length === 0) {
 
@@ -213,17 +212,17 @@ function generatePassword() {
     }
 
 
-    // -------------------------------
+    
     // COMBINE CHARACTER SETS
-    // -------------------------------
+  
 
     const allCharacters =
         characterSets.join("");
 
 
-    // -------------------------------
+    
     // GUARANTEE ONE FROM EACH TYPE
-    // -------------------------------
+  
 
     const passwordCharacters = [];
 
@@ -237,9 +236,9 @@ function generatePassword() {
     });
 
 
-    // -------------------------------
+  
     // FILL REMAINING CHARACTERS
-    // -------------------------------
+  
 
     while (passwordCharacters.length < length) {
 
@@ -250,16 +249,16 @@ function generatePassword() {
     }
 
 
-    // -------------------------------
+   
     // SHUFFLE PASSWORD
-    // -------------------------------
+  
 
     secureShuffle(passwordCharacters);
 
 
-    // -------------------------------
+  
     // CREATE PASSWORD
-    // -------------------------------
+  
 
     const password =
         passwordCharacters.join("");
@@ -268,18 +267,18 @@ function generatePassword() {
     passwordOutput.value = password;
 
 
-    // -------------------------------
+  
     // UPDATE STRENGTH
-    // -------------------------------
+    
 
     calculateStrength(password);
 
 }
 
 
-// ===============================
+
 // PASSWORD STRENGTH
-// ===============================
+
 
 function calculateStrength(password) {
 
@@ -363,9 +362,9 @@ function calculateStrength(password) {
 }
 
 
-// ===============================
+
 // COPY PASSWORD
-// ===============================
+
 
 copyBtn.addEventListener("click", async () => {
 
@@ -409,9 +408,9 @@ copyBtn.addEventListener("click", async () => {
 });
 
 
-// ===============================
+
 // SHOW / HIDE PASSWORD
-// ===============================
+
 
 togglePassword.addEventListener("click", () => {
 
@@ -444,9 +443,9 @@ generateBtn.addEventListener(
 );
 
 
-// ===============================
+
 // ERROR FUNCTIONS
-// ===============================
+
 
 function showError(message) {
 
@@ -466,8 +465,8 @@ function clearError() {
 }
 
 
-// ===============================
+
 // GENERATE PASSWORD ON PAGE LOAD
-// ===============================
+
 
 generatePassword();
