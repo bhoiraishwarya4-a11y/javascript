@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Form Validation</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- simple form validation-->
+    <div class="container">
+      <h2>Registration Form</h2>
+
+      <form id="registrationForm">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+          <p id="nameError" class="error"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+          <p id="emailError" class="error"></p>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" />
+          <p id="passwordError" class="error"></p>
+        </div>
+
+        <button type="submit">Register</button>
+
+        <p id="successMessage" class="success"></p>
+      </form>
+    </div>
+    <hr />
+
+    <!-- simple To-Do List -->
+    <h2>Simple To-Do List</h2>
+
+    <label>Enter task:</label>
+
+    <input type="text" id="taskInput" placeholder="Enter a task" />
+
+    <button id="addTask">Add Task</button>
+
+    <h3>Tasks</h3>
+
+    <ul id="taskList"></ul>
+    <hr />
+
+    <!--add items to list-->
+    <h2>Shopping List</h2>
+
+    <ul id="shoppingList"></ul>
+    <hr />
+
+    <!--character counter-->
+    <h2>Character Counter</h2>
+    <textarea id="message" maxlength="100" placeholder="Write your message...">
+    </textarea>
+    <p id="counter">Character: 0/100</p>
+    <hr />
+
+    <!--show /hide message-->
+    <h2>Show / Hide Secret Message</h2>
+    <p id="secretMessage">🔐 This is my secret message!</p>
+    <button id="showBtn">Show</button>
+    <button id="hideBtn">Hide</button>
+    <hr />
+
+    <!--change background color-->
+    <h2>Change Paragraph Color</h2>
+    <p id="text">This is my paragraph. Click a button to change my color.</p>
+    <button id="redBtn">Red</button>
+    <button id="greenBtn">Green</button>
+    <button id="blueBtn">Blue</button>
+    <hr />
+
+    <!--change heading-->
+    <h1 id="heading">Welcome Student</h1>
+    <button id="changeBtn">Change Heading</button>
+    <hr />
+
+    <!--input greeting-->
+    <h2>Greeting App</h2>
+    <label>Enter your name:</label>
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <button id="greetBtn">Greet Me</button>
+    <p id="greeting">Hello, Student!</p>
+
+    <script src="script.js"></script>
+  </body>
+</html>
